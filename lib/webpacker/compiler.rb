@@ -69,6 +69,11 @@ class Webpacker::Compiler
         logger.info("#{k} -> #{v}")
       end
       logger.info("-"*10)
+      logger.info("sys env dump")
+      ENV.each do |k,v|
+        logger.info("#{k} -> #{v}")
+      end
+      logger.info("-"*10)
 
       stdout, stderr, status = Open3.capture3(
         webpack_env,
